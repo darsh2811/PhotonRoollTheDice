@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 97837481a457d4d7a8f0e5e9250d0fa1
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer.unity
+    guid: 343287b6d70dc4f91a0728e27ac1f939
+  m_configObjects: {}
