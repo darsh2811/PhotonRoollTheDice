@@ -108,11 +108,8 @@ public class DiceController : MonoBehaviour {
         rb.useGravity = false;
         rb.isKinematic = false;
         diceValue = 0;
-       // GameController.GC.myScore.text = "0";
         Debug.Log("Reseting Dice Postiion");
-        //for(int i = 0; i < 3; i++) {
-        //    DiceText[i].text = "0";
-        //}
+       
     }
 
     void RollAgain() {
@@ -129,20 +126,10 @@ public class DiceController : MonoBehaviour {
             {
                 diceValue = previousValue + side.sideValue;
                 Debug.Log("dice value" + gameObject.transform.parent.name + "    " + diceValue);
-                //if (gameObject.transform.parent.name == "dice1")
-                //{
-                //    GameController.GC.myScore.text = diceValue.ToString();
-                //}
-                //else if (gameObject.transform.parent.name == "dice2")
-                //{
-                //    GameController.GC.myScore.text = diceValue.ToString();
-                //}
-                //else
-                //{
+               
                 previousValue = diceValue;
-
-                    GameController.GC.myScore.text = diceValue.ToString();
-                //}
+                GameController.GC.myScore.text = diceValue.ToString();
+       
                 if (PV.IsMine)
                 {
                     PV.RPC("RPC_SetTurn", RpcTarget.AllBuffered, GameController.GC.isMyTurn, GameController.GC.myScore.text);
@@ -163,70 +150,13 @@ public class DiceController : MonoBehaviour {
             if (GameController.GC.isMyTurn == true)
             {
                 winLoseFunction();
-                //if (GameController.GC.roundCount < 6)
-                //{
-                //    GameController.GC.roundCount += 1;
-
-                //        int temp = GameController.GC.roundCount / 2;
-                //        GameController.GC.roundNo.text = temp.ToString();
-
-                //    //ResetDice();
-                //}
-                //else
-                //{
-                //    if(int.Parse(GameController.GC.myScore.text)>int.Parse(GameController.GC.OtherScore.text))
-                //    {
-                //        GameController.GC.winLoseText.text = "You Win";
-                //    }
-                //    else if (int.Parse(GameController.GC.myScore.text) < int.Parse(GameController.GC.OtherScore.text))
-                //    {
-                //        GameController.GC.winLoseText.text = "YOu Losess";
-                //    }
-                //    else
-                //    {
-                //        GameController.GC.winLoseText.text = "Tie";
-                //    }
-                //    GameController.GC.RollButton.GetComponent<Button>().interactable = false;
-                //}
-            }
+             }
         }
         else
         {
             winLoseFunction();
-            //if (GameController.GC.isMyTurn == false)
-            //{
-            //    if (GameController.GC.roundCount < 6)
-            //    {
-            //        GameController.GC.roundCount += 1;
-
-            //            GameController.GC.roundNo.text = GameController.GC.roundCount.ToString();
-            //            //GameController.GC.roundNo.text = GameController.GC.roundCount.ToString();
-
-            //        ResetDice();
-            //    }
-            //    else
-            //    {
-            //        if (int.Parse(GameController.GC.myScore.text) > int.Parse(GameController.GC.OtherScore.text))
-            //        {
-            //            GameController.GC.winLoseText.text = "You Win";
-            //        }
-            //        else if(int.Parse(GameController.GC.myScore.text) < int.Parse(GameController.GC.OtherScore.text))
-            //        {
-            //            GameController.GC.winLoseText.text = "YOu Losess";
-            //        }
-            //        else
-            //        {
-            //            GameController.GC.winLoseText.text = "Tie";
-            //        }
-            //        GameController.GC.RollButton.GetComponent<Button>().interactable = false;
-            //    }
-
-            //}
-
         }
-       // ResetDice();
-        
-    }
+     }
 
     void winLoseFunction()
     {

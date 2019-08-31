@@ -37,11 +37,7 @@ public class PhotonPlayer : MonoBehaviour
                   GameController.GC.spawnPoints[1].position, GameController.GC.spawnPoints[randomSpawn].rotation, 0);
             }
         }
-        //else
-        //{
-        //    myDice = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonDicePlayer"),
-        //     GameController.GC.spawnPoints[1].position, GameController.GC.spawnPoints[randomSpawn].rotation, 0);
-        //}
+        
     }
 		// Update is called once per frame
 		void Update()

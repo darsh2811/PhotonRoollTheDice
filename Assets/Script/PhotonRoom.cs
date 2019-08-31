@@ -82,28 +82,27 @@ public class PhotonRoom : MonoBehaviourPunCallbacks,IInRoomCallbacks
                 RestartTimer();
             }
 
-            // Debug.Log("Update IsGaMeLoaded  " + isGameLoaded);
+          
 
             if (!isGameLoaded)
             {
-                //Debug.Log("Update   " + isGameLoaded);
+               
                 if (readyToStart)
                 {
                     atMaxPlayer -= Time.deltaTime;
                     lessThanMaxPlayers = atMaxPlayer;
                     timeToStart = atMaxPlayer;
-//                    Debug.Log("Update  Reday toCount  " + readyToStart);
                 }
                 else if (readyToCount)
                 {
                     lessThanMaxPlayers -= Time.deltaTime;
                     timeToStart = lessThanMaxPlayers;
-                //    Debug.Log("Update  Readytocount  " + readyToCount);
+              
                 }
-                //Debug.Log("Display time to start to the players" + timeToStart);
+               
                 if (timeToStart <= 0)
                 {
-                    //Debug.Log("Whats Wrong ppl");
+                   
                     StartGame();
                 }
             }
@@ -147,7 +146,7 @@ public class PhotonRoom : MonoBehaviourPunCallbacks,IInRoomCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-       // Debug.Log("A New Plyare has joined the Room");
+     
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom++;
 
